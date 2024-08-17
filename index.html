@@ -7,345 +7,433 @@
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatiic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+
 
     <script src="https://unpkg.com/feather-icons"></script>
 
-    <!-- My Style -->
+    <!-- my style -->
+
     <style>
-        :root {
-            --primary: yellow;
-            --bg: #010101;
-        }
+        :root{
+    --primary: yellow;
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    --bg: #010101;
+}
 
-        body {
-            font-family: "Poppins", sans-serif;
-            background-color: var(--bg);
-            color: #fff;
-            line-height: 1.6;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    outline:none;
+    border:none;
+    text-decoration: none;
+}
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 9999;
-            background-color: rgba(1, 1, 1, 0.8);
-        }
+body{
+    font-family:"Poppins",sans-serif;
+    background-color: var(--bg);
+    color:#fff;
+    min-height: 7000px;
+}
 
-        .navbar .navbar-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #fff;
-            font-style: italic;
-        }
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    /* background-color: rgba(1, 1, 1,0.8); */
+    /* border-bottom: 1px solid yellow; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:9999;
 
-        .navbar .navbar-logo span {
-            color: var(--primary);
-        }
+}
 
-        .navbar .navbar-nav {
-            display: flex;
-            gap: 1rem;
-        }
 
-        .navbar .navbar-nav a {
-            color: #fff;
-            font-size: 1.2rem;
-            margin: 0 1rem;
-        }
+.navbar .navbar-logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+}
 
-        .navbar .navbar-nav a:hover {
-            color: var(--primary);
-        }
 
-        #hb-mn {
-            display: none;
-        }
+.navbar .navbar-logo span{
+    color: var(--primary);
+}
 
-        .navbar .navbar-extra {
-            display: flex;
-            align-items: center;
-        }
 
-        .navbar .navbar-extra a {
-            color: #fff;
-            margin-left: 1.5rem;
-            font-size: 1.5rem;
-        }
+.navbar .navbar-nav a{
+    color: #fff;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin:0 1rem;
+}
 
-        /* Hero */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: url("rame.jpg") no-repeat center/cover;
-            padding: 2rem 5%;
-            position: relative;
-            text-align: center;
-        }
+.navbar .navbar-nav a:hover{
+    color: var(--primary);
+}
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0) 25%);
-            z-index: 1;
-        }
+.navbar .navbar-nav a:after{
+    content: "";
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
 
-        .hero .content {
-            position: relative;
-            z-index: 2;
-            max-width: 50rem;
-        }
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
 
-        .hero .content h1 {
-            font-size: 2.5rem;
-            text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-            line-height: 1.2;
-        }
 
-        .hero .content h1 span {
-            color: var(--primary);
-        }
+#hb-mn{
+    display: none;
+}
 
-        .hero .content p {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-        }
+.navbar .navbar-extra a{
+    color: #fff;
+    margin: 0 2rem;
+}
 
-        .hero .content .cta {
-            margin-top: 1.5rem;
-            display: inline-block;
-            font-size: 1.4rem;
-            color: #f6f6f6;
-            padding: 0.75rem 2rem;
-            background-color: var(--primary);
-            border-radius: 5px;
-            text-decoration: none;
-        }
+.navbar .navbar-extra a:hover{
+    color: var(--primary);
+}
 
-        /* About */
-        .about, .Struktur {
-            padding: 6rem 5% 3rem;
-        }
 
-        .about h2, .Struktur h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            margin-bottom: 3rem;
-        }
 
-        .about h2 span, .Struktur h2 span {
-            color: var(--primary);
-        }
 
-        .about .row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            align-items: center;
-        }
+/* Hero */
+.hero{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("rame.jpg");
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position: center;
+}
 
-        .about .row .content {
-            flex: 1 1 30rem;
-        }
+.hero::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,rgba(1,1,3,1)3%,rgba(255,255,255,0)25%);
+}
 
-        .about .row .content h3 {
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
+.hero .content{
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
 
-        .about .row .content p {
-            font-size: 1.2rem;
-        }
+.hero .content h1{
+    font-size: 3rem;
+    text-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+    line-height: 1.2;
+}
 
-        .about .row img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+.hero .content h1 span{
+    color:yellow
+}
 
-        /* Struktur */
-        .Struktur .main .row {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-        }
+.text{
+    color: rgb(255, 255, 255);
+}
 
-        .Struktur .main .row h4 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+.hero .content .cta{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #f6f6f6;
+    text-shadow: #010101;
+}
 
-        .Struktur .main .row p {
-            font-size: 1.4rem;
-        }
+/* About */
+.about,
+.Struktur{
+    padding: 9rem 7% 1.4rem;
+    
+}
 
-        /* Jadwal */
-        .Jadwal {
-            padding: 3rem 5%;
-            text-align: center;
-        }
+.about h2,
+.Struktur h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
 
-        .Jadwal h2 span {
-            color: var(--primary);
-        }
+}
 
-        .Jadwal .A, .Jadwal .B, .Jadwal .C {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-        }
+.about h2 span,
+.Struktur h2 span{
+    color: yellow;
 
-        /* Activity */
-        .Activity {
-            padding: 3rem 5%;
-            text-align: center;
-        }
+}
 
-        .Activity img {
-            max-width: 100%;
-            height: auto;
-            margin: 1rem 0;
-        }
 
-        /* Sosmed */
-        .Sosmed {
-            padding: 3rem 5%;
-            text-align: center;
-        }
 
-        .Sosmed .ss {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
+.igg{
+    width: 680px;
+    height: 380px;
+}
 
-        .Sosmed .ss div {
-            text-align: center;
-        }
+.igg::after{
+    display: block;
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,rgba(1,1,3,1)3%,rgba(255,255,255,0)25%);
+}
 
-        .Sosmed .ss h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+.igg2{
+    width: 680px;
+    height: 380px;
+}
 
-        .Sosmed .ss h4 {
-            font-size: 1.4rem;
-        }
+.igg2::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg,rgba(1,1,3,1)3%,rgba(255,255,255,0)25%);
+}
 
-        /* MEDIA QUERIES */
-        @media (max-width: 1024px) {
-            .navbar .navbar-nav {
-                gap: 0.5rem;
-            }
+.teks2{
+    display: flex;
+}
 
-            .navbar .navbar-nav a {
-                font-size: 1rem;
-            }
-        }
+.teks{
+    display: flex;
+}
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 1rem 3%;
-            }
+.prg{
+    display: flex;
+    padding: 30px;
+    
+}
+.about .row{
+    display: flex;
+    justify-items: auto;
+}
 
-            .navbar .navbar-nav {
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                right: -100%;
-                background-color: #fff;
-                width: 100%;
-                height: 100vh;
-                transition: 0.3s;
-            }
+.about .row .about-imga{
+    flex: 1 1 45rem;
+}
 
-            .navbar .navbar-nav.active {
-                right: 0;
-            }
+.about .row .about-imga imga{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-            #hb-mn {
-                display: inline-block;
-                font-size: 1.8rem;
-            }
+.about .row .content{
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
 
-            .navbar .navbar-nav a {
-                color: var(--bg);
-                font-size: 1.8rem;
-                margin: 1.5rem 0;
-            }
 
-            .about .row {
-                flex-direction: column;
-            }
 
-            .hero .content h1 {
-                font-size: 2rem;
-            }
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    will-change: opacity;
+}
 
-            .hero .content p {
-                font-size: 1rem;
-            }
+.fade-in.show {
+    opacity: 1;
+}
 
-            .about .row .content h3 {
-                font-size: 1.6rem;
-            }
+.Jadwal h6 span{
+    color: var(--primary);
+}
 
-            .about .row .content p {
-                font-size: 1rem;
-            }
+.Jadwal p span{
+    color: var(--primary);
+}
 
-            .Struktur .main .row h4 {
-                font-size: 1.6rem;
-            }
+.Jadwal .A,
+.Jadwal .B,
+.Jadwal .C{
+    font-size: 2.3rem;
+    margin: 2px;
+}
 
-            .Struktur .main .row p {
-                font-size: 1.2rem;
-            }
-        }
+.Jadwal .A .klsa,
+.Jadwal .B .klsb,
+.Jadwal .C .klsc{
+    font-size: 3rem;
+}
 
-        @media (max-width: 480px) {
-            .hero .content h1 {
-                font-size: 1.8rem;
-            }
+.kelassa{
+    font-size: 39px;
+}
 
-            .hero .content p {
-                font-size: 0.9rem;
-            }
+.ka{
+    font-size: 19px;
+}
 
-            .navbar .navbar-logo {
-                font-size: 1.5rem;
-            }
+.kelassa{
+    width: 27px;
+}
 
-            .navbar .navbar-extra a {
-                font-size: 1.2rem;
-            }
-        }
+.pembatas{
+    font-size: 27px;
+}
+
+
+.ksb{
+    font-size: 30px;
+    width: 16px;
+}
+
+/* Struktur */
+.Struktur .main .row{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.Struktur .main .row h4{
+    font-size: 2rem;
+}
+
+.Struktur .main .row p{
+    font-size: 2rem;
+}
+
+/* Struktur End */
+
+.dok{
+    width: 40%;
+    height: 40%;
+}
+
+.Activity .row{
+    display: block;
+    justify-content: center;
+    align-items: center
+}
+
+.Sosmed .ss{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 70px;
+}
+
+/* MEDIA QUERIES */
+
+
+
+
+/* Laptop */
+@media (max-width:1366px){
+    html{
+        font-size: 62.5%;
+
+    }
+}
+
+
+/* Tablet */
+@media (max-width:768px){
+    html{
+        font-size: 62.5%;
+
+    }
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+    #hb-mn{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav a{
+        color:var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a:after{
+        transform-origin: 0 0;
+
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform:scaleX(0.3s);
+    }
+
+    .about .row,
+    .about .row .imga,
+    .about .row .content h3,
+    .about .row .content h4,
+    .about .row .content h5,
+    .about .row .content p{
+        flex-wrap: wrap;
+    }
+    
+    .about .row .imga img{
+        height: 24rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content{
+        padding: 0;
+    }
+
+    .about .row .content h3,
+    .about .row .content h4,
+    .about .row .content h5{
+        margin-top: 1rem;
+        font-size: 1.4rem;
+    }
+
+    .about .row .content p{
+       font-size: 1.4rem;
+    
+    }
+
+
+}
+
+
+/* Hp */
+@media (max-width:40px){
+    html{
+        font-size: 62.5%;
+
+    }
+};
+
+
+
     </style>
 </head>
 <body>
     <!-- NAVBAR -->
-    <nav class="navbar">
+     <nav class="navbar">
         <a href="#" class="navbar-logo">TK24<span>Unsri</span>.</a>
 
         <div class="navbar-nav">
@@ -356,89 +444,254 @@
             <a href="#Activity">Dokumentasi</a>
             <a href="#Sosmed">Sosmed</a>
         </div>
-
+        
         <div class="navbar-extra">
             <a href="#Sosmed" id="instagram"><i data-feather="instagram"></i></a>
             <a href="#" id="hb-mn"><i data-feather="menu"></i></a>
         </div>
-    </nav>
+     </nav>
     <!-- NAVBAR SELESAI -->
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <main class="content">
-            <h1 class="text">Selamat Datang Di TK24<span>Unsri</span></h1>
-            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus omnis necessitatibus asperiores, odit error ipsa?</p>
-            <a href="#" class="cta">wm:ridho TK1B</a>
-        </main>
-    </section>
-    <!-- Hero Section Selesai -->
+<!-- Hero Section -->
+ <section class="hero" id="home">
+    <main class="content">
+        <h1 class="text">Selamat Datang Di TK24<span>Unsri</span></h1>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus omnis necessitatibus asperiores, odit error ipsa?</p>
+        <a href="#" class="cta">wm:ridho TK1B</a>
+    </main>
+ </section>
 
-    <!-- About Section -->
-    <section class="about" id="About">
-        <h2>About <span>Us</span></h2>
-        <div class="row">
-            <div class="content">
-                <h3>Lorem ipsum dolor sit</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam tempore, et fugiat dolorum accusantium incidunt, quas, voluptatibus non dolores placeat error minima repudiandae fuga doloribus.</p>
-            </div>
-            <img src="https://via.placeholder.com/400x300" alt="Gambar About">
+<!-- Hero Section End -->
+
+<!-- About -->
+<section id="About" class="about">
+    <h2><span>About</span> Us</h2>
+
+    <div class="row fade-in">
+        <div class="imga">
+            <img class="igg fade-in"src="T33.jpg"
+            alt="About Us"
         </div>
-    </section>
-    <!-- About Section Selesai -->
 
-    <!-- Struktur Section -->
-    <section class="Struktur" id="Struktur">
-        <h2>Structure <span>Organisasi</span></h2>
-        <div class="main">
-            <div class="row">
-                <h4>Lorem Ipsum</h4>
-                <p>Structure Lorem Ipsum</p>
-            </div>
+        <div class="content">
+            <h3 class="teks fade-in">
+            Kelas A
+            </h3>
+            <p class="prg fade-in">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ullam voluptas tenetur cum quam quas.
+            </p>
         </div>
-    </section>
-    <!-- Struktur Section Selesai -->
 
-    <!-- Jadwal Section -->
-    <section class="Jadwal" id="Jadwal">
-        <h2>Jadwal <span>Rapat</span></h2>
-        <div class="A">Jadwal A</div>
-        <div class="B">Jadwal B</div>
-        <div class="C">Jadwal C</div>
-    </section>
-    <!-- Jadwal Section Selesai -->
 
-    <!-- Activity Section -->
-    <section class="Activity" id="Activity">
-        <h2>Dokumentasi</h2>
-        <img src="https://via.placeholder.com/500x300" alt="Dokumentasi A">
-        <img src="https://via.placeholder.com/500x300" alt="Dokumentasi B">
-        <img src="https://via.placeholder.com/500x300" alt="Dokumentasi C">
-    </section>
-    <!-- Activity Section Selesai -->
-
-    <!-- Sosmed Section -->
-    <section class="Sosmed" id="Sosmed">
-        <h2>Social <span>Media</span></h2>
-        <div class="ss">
-            <div>
-                <h3>Instagram</h3>
-                <h4>@TK24</h4>
-            </div>
-            <div>
-                <h3>Facebook</h3>
-                <h4>TK24</h4>
-            </div>
-            <div>
-                <h3>Twitter</h3>
-                <h4>@TK24</h4>
-            </div>
+        <div class="imga">
+            <img class="igg2 fade-in"src="T22.jpg"
+            alt="About Us"
         </div>
-    </section>
-    <!-- Sosmed Section Selesai -->
 
+        <div class="content">
+            <h4 class="teks2 fade-in">
+            Kelas B
+            </h4>
+            <p class="prg fade-in">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ullam voluptas tenetur cum quam quas.</p>
+        </div>
+
+
+        <div class="imga">
+            <img class="igg2 fade-in"src="T111.jpg"
+            alt="About Us"
+        </div>
+
+        <div class="content">
+            <h5 class="teks3 fade-in">
+            Kelas C
+            </h5>
+            <p class="tesk fade-in">note:cewek kelas C pulang duluan, ga mau foto katanya</p>
+        </div>
+
+        
+
+</section>
+
+    
+<!-- About End -->
+
+<!-- Structure -->
+ <section id="Struktur" class="Struktur fade-in"/>
+ <h2><span>Structure</span> Us</h2>
+ <main class="main fade-in">
+    <div class="row">
+
+        <h4>Coming Soon,</h4>
+        <p>si-admin lagi belajar slide swiper</p>
+    </div>
+ </main>
+ 
+<!-- Structure End -->
+
+<!-- Jadwal -->
+ <section id="Jadwal" class="Jadwal fade-in"/>
+ <h2>Jadwal<span> Us</span></h2>
+ <div class="jadwal fade-in">
+    <div class="A">
+        
+        <h6 class="klsa">Jadwal Kelas A<span> Semester Satu</span></h6>
+        
+        <p>Senin: </p>
+        <p>Fisika<span> -----08:00=>09:40</span></p>
+        <p>probabilitas dan statisik<span> -----09:45=>12:15</span></p>
+        <p>Matematika Diskrit<span> -----13:00=>14:40</span></p>
+        <p>----------</p>
+        <p>Selasa: <span></span></p>
+        <p>----------</p>
+        <p>Rabu: </p>
+        <p>Algoritma Dan Pemograman<span>-----08:00=>10:30</span></p>
+        <p>Kalkulus 1<span>-----10:35=>12:15</span></p>
+        <p>----------</p>
+        <p>Kamis: </p>
+        <p>Pengantar Teknik Komputer<span>-----10:35=>13:05</span></p>
+        <p>----------</p>
+        <p>Jum'at: </p>
+        <p>Agama<span>-----08:00=>09:40</span></p>
+        <p>PKN<span>-----09:45=>11:25</span></p>
+        <p>-----</p>
+        <p>-----</p>
+        <p>-----</p>
+    </div>
+    
+    <div class="B">
+        
+        <h6 class="klsb">Jadwal Kelas B<span> Semester Satu</span></h6>
+        
+        <p>Senin: </p>
+        <p>Algoritma Dan Pemograman<span> -----08:00=>09:40</span></p>
+        <p>Kalkulus 1<span> -----09:45=>12:15</span></p>
+        <p>----------</p>
+        <p>Selasa: <span></span></p>
+        <p>Fisika<span>-----08:00=>09:40</span></p>
+        <p>Probabilitas Dan Statistik<span>-----09:45=>12:15</span></p>
+        <p>Matematika Diskrit<span>-----13:00=>14:40</span></p>
+        <p>----------</p>
+        <p>Rabu: </p>
+        <p>----------</p>
+        <p>Kamis: </p>
+        <p>Pengantar Teknik Komputer<span>-----13:10=>15:40</span></p>
+        <p>----------</p>
+        <p>Jum'at: </p>
+        <p>PKN<span>-----08:00=>09:40</span></p>
+        <p>Agama<span>-----11:25=>13:05</span></p>
+        <p>-----</p>
+        <p>-----</p>
+        <p>-----</p>
+    </div>
+    
+    <div class="C">
+        
+        <h6 class="klsc">Jadwal Kelas C<span> Semester Satu</span></h6>
+        
+        <p>Senin: </p>
+        <p>----------</p>
+        <p>Selasa: <span></span></p>
+        <p>Algoritma Dan Pemograman<span>-----08:00=>10:30</span></p>
+        <p>Kalkulus 1<span>-----10:35=>12:15</span></p>
+        <p>Rabu: </p>
+        <p>Fisika<span>-----08:00=>09:40</span></p>
+        <p>Probabilitas Dan Statistik<span>-----09:45=>12:15</span></p>
+        <p>Matematika Diskrit<span>-----13:00=>14:40</span></p>
+        <p>----------</p>
+        <p>Kamis: </p>
+        <p>----------</p>
+        <p>Jum'at: </p>
+        <p>Agama<span>-----09:45=>11:25</span></p>
+        <p>PKN<span>-----11:25=>13:05</span></p>
+        <p>-----</p>
+        <p>-----</p>
+        <p>-----</p>
+    </div>
+    
+ </div>
+<!-- Jadwal End -->
+
+<!-- Activity -->
+<section id="Activity" class="Activity fade-in"/>
+<h2><span>Dokume</span>ntasi.</h2>
+<div class="row">
+    <img class="dok" src="ml.jpg">
+    <img class="dok" src="mll.jpg">
+    <img class="dok" src="futsal1.jpg">
+    <img class="dok" src="futsal.jpg">
+    <img class="dok" src="dikelas.jpg">
+    <img class="dok" src="digedung.jpg">
+    <img class="dok" src="pkmb.jpg">
+    <img class="dok" src="dihimdiko.jpg">
+
+    <h4>Bagi Foto Yang Pengen Masuk Dokumentasi</h4>
+    <h4>Chat/Dm Ridho TK1B</h4>
+</div>
+
+<!-- Activity End -->
+ 
+<!-- Sosmed -->
+<section id="Sosmed" class="Sosmed fade-in"/>
+<h2>Sosial<span> Media</span></h2>
+<div class="ss">
+
+    <a href="https://www.instagram.com/tekaaa_1a?igsh=MWhhMm9kbGZkbXJhcA=="><h3>Kelas A</h3></a>
+    <h4>-----</h4>
+    <a href="https://www.instagram.com/tekasatu.be?igsh=MWk2b2RwM2drZ2ViaA"><h3>Kelas B</h3></a>
+    <h4>-----</h4>
+    <a href="https://www.instagram.com/tkone.c?igsh=ZWNramxqbGxzM2gz"><h3>Kelas C</h3></a>
+</div>
+    <!-- Sosmed End -->
+    
+    <h2><span>Coming</span> Soon.</h2>
+
+
+<script>
+    feather.replace();
+  </script>
+
+      
     <script>
-        feather.replace();
+        //Toggle class active
+const navbarNav = document.querySelector('.navbar-nav');
+// ketika menu diklik
+document.querySelector('#hb-mn').onclick=()=>{
+    navbarNav.classList.toggle('active');
+};
+
+// menghilangkan navbar
+
+const menu=document.querySelector("#hb-mn");
+
+document.addEventListener('click',function(e){
+    if(!menu.contains(e.target)&&!navbarNav.contains(e.target)){
+        navbarNav.classList.remove('active');
+    }
+});
+
+
+const fadeInElements = document.querySelectorAll('.fade-in');
+
+    const fadeInOnScroll = () => {
+        fadeInElements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const viewportHeight = window.innerHeight;
+
+            // Menambahkan kelas 'show' saat elemen muncul di viewport
+            if (elementPosition < viewportHeight - 100 && elementBottom > 0) {
+                element.classList.add('show');
+            } else {
+                // Menghapus kelas 'show' saat elemen keluar dari viewport
+                element.classList.remove('show');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', fadeInOnScroll);
+
+    // Initial check in case elements are in view on page load
+    fadeInOnScroll();
+
     </script>
 </body>
 </html>
