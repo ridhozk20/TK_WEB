@@ -1,737 +1,444 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Web buatan ridho</title>
 
-
-
     <!-- Font -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
-
-
 
     <script src="https://unpkg.com/feather-icons"></script>
 
-
-
     <!-- My Style -->
-
     <style>
-
         :root {
-
             --primary: yellow;
-
             --bg: #010101;
-
         }
-
-
 
         * {
-
             margin: 0;
-
             padding: 0;
-
             box-sizing: border-box;
-
         }
-
-
 
         body {
-
             font-family: "Poppins", sans-serif;
-
             background-color: var(--bg);
-
             color: #fff;
-
             line-height: 1.6;
-
         }
-
-
 
         /* Navbar */
-
         .navbar {
-
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
-            padding: 1rem 7%;
-
+            padding: 1rem 5%;
             position: fixed;
-
             top: 0;
-
             left: 0;
-
             right: 0;
-
             z-index: 9999;
-
             background-color: rgba(1, 1, 1, 0.8);
-
         }
-
-
 
         .navbar .navbar-logo {
-
             font-size: 2rem;
-
             font-weight: 700;
-
             color: #fff;
-
             font-style: italic;
-
         }
-
-
 
         .navbar .navbar-logo span {
-
             color: var(--primary);
-
         }
 
-
+        .navbar .navbar-nav {
+            display: flex;
+            gap: 1rem;
+        }
 
         .navbar .navbar-nav a {
-
             color: #fff;
-
-            font-size: 1.5rem;
-
+            font-size: 1.2rem;
             margin: 0 1rem;
-
         }
-
-
 
         .navbar .navbar-nav a:hover {
-
             color: var(--primary);
-
         }
-
-
 
         #hb-mn {
-
             display: none;
-
         }
 
-
+        .navbar .navbar-extra {
+            display: flex;
+            align-items: center;
+        }
 
         .navbar .navbar-extra a {
-
             color: #fff;
-
-            margin: 0 2rem;
-
+            margin-left: 1.5rem;
+            font-size: 1.5rem;
         }
-
-
 
         /* Hero */
-
         .hero {
-
             min-height: 100vh;
-
             display: flex;
-
             align-items: center;
-
+            justify-content: center;
             background: url("rame.jpg") no-repeat center/cover;
-
-            padding: 2rem 7%;
-
+            padding: 2rem 5%;
             position: relative;
-
+            text-align: center;
         }
-
-
 
         .hero::after {
-
             content: '';
-
             position: absolute;
-
             top: 0;
-
             left: 0;
-
             width: 100%;
-
             height: 100%;
-
             background: linear-gradient(0deg, rgba(1, 1, 3, 1) 3%, rgba(255, 255, 255, 0) 25%);
-
             z-index: 1;
-
         }
-
-
 
         .hero .content {
-
             position: relative;
-
             z-index: 2;
-
-            max-width: 60rem;
-
+            max-width: 50rem;
         }
-
-
 
         .hero .content h1 {
-
-            font-size: 3rem;
-
+            font-size: 2.5rem;
             text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-
             line-height: 1.2;
-
         }
-
-
 
         .hero .content h1 span {
-
-            color: yellow;
-
+            color: var(--primary);
         }
 
-
+        .hero .content p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
 
         .hero .content .cta {
-
-            margin-top: 1rem;
-
+            margin-top: 1.5rem;
             display: inline-block;
-
             font-size: 1.4rem;
-
             color: #f6f6f6;
-
+            padding: 0.75rem 2rem;
+            background-color: var(--primary);
+            border-radius: 5px;
+            text-decoration: none;
         }
-
-
 
         /* About */
-
         .about, .Struktur {
-
-            padding: 9rem 7% 1.4rem;
-
+            padding: 6rem 5% 3rem;
         }
-
-
 
         .about h2, .Struktur h2 {
-
             text-align: center;
-
-            font-size: 2.6rem;
-
+            font-size: 2.4rem;
             margin-bottom: 3rem;
-
         }
-
-
 
         .about h2 span, .Struktur h2 span {
-
-            color: yellow;
-
+            color: var(--primary);
         }
-
-
 
         .about .row {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 2rem;
-
+            align-items: center;
         }
-
-
 
         .about .row .content {
-
             flex: 1 1 30rem;
-
         }
 
-
-
-        .about .row .content h3, .about .row .content h4, .about .row .content h5 {
-
-            margin-top: 1rem;
-
+        .about .row .content h3 {
+            margin-bottom: 1rem;
             font-size: 1.8rem;
-
         }
-
-
 
         .about .row .content p {
-
-            font-size: 1.4rem;
-
+            font-size: 1.2rem;
         }
-
-
 
         .about .row img {
-
             max-width: 100%;
-
             height: auto;
-
             object-fit: cover;
-
         }
 
-
-
-        /* Structure */
-
+        /* Struktur */
         .Struktur .main .row {
-
             display: flex;
-
             justify-content: center;
-
-            margin: 20px 0;
-
+            text-align: center;
         }
 
-
-
-        .Struktur .main .row h4, .Struktur .main .row p {
-
+        .Struktur .main .row h4 {
             font-size: 2rem;
-
+            margin-bottom: 1rem;
         }
 
-
+        .Struktur .main .row p {
+            font-size: 1.4rem;
+        }
 
         /* Jadwal */
-
         .Jadwal {
-
-            padding: 3rem 7%;
-
+            padding: 3rem 5%;
             text-align: center;
-
         }
-
-
 
         .Jadwal h2 span {
-
             color: var(--primary);
-
         }
-
-
 
         .Jadwal .A, .Jadwal .B, .Jadwal .C {
-
-            font-size: 1.8rem;
-
-            margin-bottom: 2rem;
-
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
         }
-
-
 
         /* Activity */
-
         .Activity {
-
-            padding: 3rem 7%;
-
+            padding: 3rem 5%;
+            text-align: center;
         }
-
-
 
         .Activity img {
-
             max-width: 100%;
-
             height: auto;
-
             margin: 1rem 0;
-
         }
-
-
 
         /* Sosmed */
-
         .Sosmed {
-
-            padding: 3rem 7%;
-
+            padding: 3rem 5%;
             text-align: center;
-
         }
-
-
 
         .Sosmed .ss {
-
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             flex-wrap: wrap;
-
             gap: 2rem;
-
         }
 
-
-
-        .Sosmed .ss h3, .Sosmed .ss h4 {
-
-            margin: 0;
-
+        .Sosmed .ss div {
+            text-align: center;
         }
 
+        .Sosmed .ss h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
 
+        .Sosmed .ss h4 {
+            font-size: 1.4rem;
+        }
 
         /* MEDIA QUERIES */
-
-        @media (max-width: 768px) {
-
+        @media (max-width: 1024px) {
             .navbar .navbar-nav {
-
-                position: absolute;
-
-                top: 100%;
-
-                right: -100%;
-
-                background-color: #fff;
-
-                width: 100%;
-
-                height: 100vh;
-
-                flex-direction: column;
-
-                transition: 0.3s;
-
+                gap: 0.5rem;
             }
-
-
-
-            .navbar .navbar-nav.active {
-
-                right: 0;
-
-            }
-
-
-
-            #hb-mn {
-
-                display: inline-block;
-
-            }
-
-
 
             .navbar .navbar-nav a {
-
-                color: var(--bg);
-
-                font-size: 2rem;
-
-                margin: 1.5rem;
-
+                font-size: 1rem;
             }
-
-
-
-            .about .row {
-
-                flex-direction: column;
-
-            }
-
-
-
-            .hero .content h1 {
-
-                font-size: 2.5rem;
-
-            }
-
-
-
-            .hero .content p {
-
-                font-size: 1.2rem;
-
-            }
-
-
-
-            .about .row .content {
-
-                padding: 0;
-
-            }
-
-
-
-            .about .row .content h3, .about .row .content h4, .about .row .content h5 {
-
-                font-size: 1.4rem;
-
-            }
-
-
-
-            .about .row .content p {
-
-                font-size: 1.2rem;
-
-            }
-
         }
 
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 3%;
+            }
+
+            .navbar .navbar-nav {
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                background-color: #fff;
+                width: 100%;
+                height: 100vh;
+                transition: 0.3s;
+            }
+
+            .navbar .navbar-nav.active {
+                right: 0;
+            }
+
+            #hb-mn {
+                display: inline-block;
+                font-size: 1.8rem;
+            }
+
+            .navbar .navbar-nav a {
+                color: var(--bg);
+                font-size: 1.8rem;
+                margin: 1.5rem 0;
+            }
+
+            .about .row {
+                flex-direction: column;
+            }
+
+            .hero .content h1 {
+                font-size: 2rem;
+            }
+
+            .hero .content p {
+                font-size: 1rem;
+            }
+
+            .about .row .content h3 {
+                font-size: 1.6rem;
+            }
+
+            .about .row .content p {
+                font-size: 1rem;
+            }
+
+            .Struktur .main .row h4 {
+                font-size: 1.6rem;
+            }
+
+            .Struktur .main .row p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .content h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .content p {
+                font-size: 0.9rem;
+            }
+
+            .navbar .navbar-logo {
+                font-size: 1.5rem;
+            }
+
+            .navbar .navbar-extra a {
+                font-size: 1.2rem;
+            }
+        }
     </style>
-
 </head>
-
 <body>
-
     <!-- NAVBAR -->
-
     <nav class="navbar">
-
         <a href="#" class="navbar-logo">TK24<span>Unsri</span>.</a>
 
-
-
         <div class="navbar-nav">
-
             <a href="#">Home</a>
-
             <a href="#About">About Us</a>
-
             <a href="#Struktur">Structure</a>
-
             <a href="#Jadwal">Jadwal</a>
-
             <a href="#Activity">Dokumentasi</a>
-
             <a href="#Sosmed">Sosmed</a>
-
         </div>
-
-
 
         <div class="navbar-extra">
-
             <a href="#Sosmed" id="instagram"><i data-feather="instagram"></i></a>
-
             <a href="#" id="hb-mn"><i data-feather="menu"></i></a>
-
         </div>
-
     </nav>
-
     <!-- NAVBAR SELESAI -->
 
-
-
     <!-- Hero Section -->
-
     <section class="hero" id="home">
-
         <main class="content">
-
             <h1 class="text">Selamat Datang Di TK24<span>Unsri</span></h1>
-
             <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus omnis necessitatibus asperiores, odit error ipsa?</p>
-
             <a href="#" class="cta">wm:ridho TK1B</a>
-
         </main>
-
     </section>
-
     <!-- Hero Section Selesai -->
 
-
-
     <!-- About Section -->
-
     <section class="about" id="About">
-
         <h2>About <span>Us</span></h2>
-
         <div class="row">
-
             <div class="content">
-
                 <h3>Lorem ipsum dolor sit</h3>
-
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam tempore, et fugiat dolorum accusantium incidunt, quas, voluptatibus non dolores placeat error minima repudiandae fuga doloribus.</p>
-
             </div>
-
             <img src="https://via.placeholder.com/400x300" alt="Gambar About">
-
         </div>
-
     </section>
-
     <!-- About Section Selesai -->
 
-
-
     <!-- Struktur Section -->
-
     <section class="Struktur" id="Struktur">
-
         <h2>Structure <span>Organisasi</span></h2>
-
         <div class="main">
-
             <div class="row">
-
                 <h4>Lorem Ipsum</h4>
-
                 <p>Structure Lorem Ipsum</p>
-
             </div>
-
         </div>
-
     </section>
-
     <!-- Struktur Section Selesai -->
 
-
-
     <!-- Jadwal Section -->
-
     <section class="Jadwal" id="Jadwal">
-
         <h2>Jadwal <span>Rapat</span></h2>
-
         <div class="A">Jadwal A</div>
-
         <div class="B">Jadwal B</div>
-
         <div class="C">Jadwal C</div>
-
     </section>
-
     <!-- Jadwal Section Selesai -->
 
-
-
     <!-- Activity Section -->
-
     <section class="Activity" id="Activity">
-
         <h2>Dokumentasi</h2>
-
         <img src="https://via.placeholder.com/500x300" alt="Dokumentasi A">
-
         <img src="https://via.placeholder.com/500x300" alt="Dokumentasi B">
-
         <img src="https://via.placeholder.com/500x300" alt="Dokumentasi C">
-
     </section>
-
     <!-- Activity Section Selesai -->
 
-
-
     <!-- Sosmed Section -->
-
     <section class="Sosmed" id="Sosmed">
-
         <h2>Social <span>Media</span></h2>
-
         <div class="ss">
-
             <div>
-
                 <h3>Instagram</h3>
-
                 <h4>@TK24</h4>
-
             </div>
-
             <div>
-
                 <h3>Facebook</h3>
-
                 <h4>TK24</h4>
-
             </div>
-
             <div>
-
                 <h3>Twitter</h3>
-
                 <h4>@TK24</h4>
-
             </div>
-
         </div>
-
     </section>
-
     <!-- Sosmed Section Selesai -->
 
-
-
     <script>
-
         feather.replace();
-
     </script>
-
 </body>
-
-              </html>
+</html>
